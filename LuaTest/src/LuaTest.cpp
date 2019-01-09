@@ -57,7 +57,7 @@ int PrintLuaStack(lua_State *L)
 	int stackTop = lua_gettop(pLuaState);//获取栈顶的索引值
 	int nIdx = 0;
 	int nType;
-	std::string strErro = "";
+	std::string strErro = "[PrintLuaStack]";
 
 	//错误信息
 	for (nIdx = stackTop; nIdx > 0; --nIdx)
