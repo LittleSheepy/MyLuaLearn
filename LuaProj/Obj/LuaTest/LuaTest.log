@@ -1,8 +1,5 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(367,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+﻿  stdafx.cpp
   LuaTest.cpp
-  stdafx.cpp
-LINK : warning C4727: 具有相同时间戳的名为 d:\sheepy\littlesheepy_github\mylualearn\luaproj\obj\luatest\luatest.pch 的 PCH 已存在于 d:\sheepy\littlesheepy_github\mylualearn\luaproj\obj\luatest\stdafx.obj 和 d:\sheepy\littlesheepy_github\mylualearn\luaproj\obj\luatest\luatest.obj 中。 使用第一个 PCH。
-  正在生成代码
-  已完成代码的生成
+  LINK : 已指定 /LTCG，但不需要生成代码；从链接命令行中移除 /LTCG 以提高链接器性能
   LuaTest.vcxproj -> D:\Sheepy\LittleSheepy_Github\MyLuaLearn\LuaProj\Bin\LuaTest.exe
   LuaTest.vcxproj -> D:\Sheepy\LittleSheepy_Github\MyLuaLearn\LuaProj\Bin\LuaTest.pdb (Full PDB)

@@ -57,13 +57,14 @@ int PrintLuaStack(lua_State *L)
 	int stackTop = lua_gettop(pLuaState);//获取栈顶的索引值
 	int nIdx = 0;
 	int nType;
-	std::string strErro = "[PrintLuaStack]";
+	std::string strErro = "[PrintLuaStack]\n";
 
 	//错误信息
 	for (nIdx = stackTop; nIdx > 0; --nIdx)
 	{
 		nType = lua_type(pLuaState, nIdx);
-		strErro += lua_typename(pLuaState, nType);
+		strErro += lua_typename(pLuaState, nType);;
+		strErro += "\n";
 		strErro += lua_tostring(pLuaState, nIdx);
 		strErro += "\n";
 	}
@@ -82,6 +83,8 @@ int PrintLuaStack(lua_State *L)
 
 int main()
 {
+	int num;
+	cin >> num;
 	lua_State *L = luaL_newstate();
 	luaL_openlibs(L);
 	int ret = 0;
@@ -90,11 +93,18 @@ int main()
 	printf("%d\n", pos_err);
 	int iError = luaL_loadfile(L, "main.lua");
 	printf("iError is %d\n",iError);
+	if (iError != 0)
+	{
+		ret = lua_pcall(L, 0, 0, pos_err);
+		lua_close(L);
+		system("pause");
+		return 1;
+	}
 	ret = lua_pcall(L, 0, 0, 0);
 
 	int rst = lua_getglobal(L, "test");
 	if (rst != LUA_TFUNCTION) {
-		printf("not func");
+		printf("not func\n");
 		system("pause");
 		return 1;
 	}

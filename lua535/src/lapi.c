@@ -56,7 +56,7 @@ const char lua_ident[] =
 #define api_checkstackindex(l, i, o)  \
 	api_check(l, isstackindex(i, o), "index not in the stack")
 
-
+// 将栈中 idx 位置处元素转为表类型。这是一个内部调用方法，仅在 lapi 域内有效。
 static TValue *index2addr (lua_State *L, int idx) {
   CallInfo *ci = L->ci;
   if (idx > 0) {
